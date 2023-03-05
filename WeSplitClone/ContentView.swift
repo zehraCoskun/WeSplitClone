@@ -51,11 +51,14 @@ struct ContentView: View {
                 } header : {
                     Text("Ne kadar bahşiş bırakacaksınız?")
                 }
+                
                 Section {
                     Text(totalMoney, format: .currency(code: Locale.current.currency?.identifier ?? "TRY"))
+                        .foregroundColor(tipPercentage==0 ? .red : .black)
                 } header : {
                     Text("Toplam tutar")
                 }
+                
                 Section {
                     Text(totalPerson, format: .currency(code: Locale.current.currency?.identifier ?? "TRY"))
                 } header : {
